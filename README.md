@@ -34,7 +34,7 @@ alternatively, you can paste the script directly into the browser console after 
 
 ### using the monitor
 
-once installed, the monitor will automatically hook into the game's socket.io connections. you can interact with the monitor through the global `soh` object in the browser console.
+once the code is ran, the monitor will automatically hook into the game's socket.io connections. you can interact with the monitor through the global `soh` object in the browser console.
 
 example commands:
 
