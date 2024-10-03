@@ -2,7 +2,7 @@
 
 ## overview
 
-this project provides a socket.io traffic monitoring tool specifically designed for brawlheroes (anime battle). it allows developers and curious users to inspect and analyze the socket.io communication between the client and server.
+this project provides a socket.io traffic monitoring tool specifically designed for brawlheroes (anime battle).
 
 ## features
 
