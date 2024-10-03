@@ -10,6 +10,7 @@
 // @run-at       document-start
 // ==/UserScript==
 
+// todo: unhookSocket, exportPacketLog?
 // either paste into console when the game loads or put this in tampermonkey
 
 (function () {
@@ -22,7 +23,7 @@
 				chat: false,
 			};
 			this.originalMethods = {};
-			this.blockedEvents = new Set(["ping", "pong"]); // Exclude annoying events
+			this.blockedEvents = new Set(["ping", "pong"]); // exclude annoying events
 			this.packetLog = new Map();
 		}
 
@@ -52,7 +53,7 @@
 				const direction = method === "emit" ? "outgoing" : "incoming";
 
 				if (this.blockedEvents.has(event)) {
-					return; // Skip blocked events
+					return; // skip blocked events
 				}
 
 				this.logPacket(type, direction, event, data);
@@ -152,7 +153,7 @@
 			try {
 				await this.waitForGlobalVariable("ts");
 				console.log("Global 'ts' object found:", window.ts);
-				window.spy = this.socketUtils;
+				window.soh = this.socketUtils;
 				this.socketUtils.hookSocket("main");
 				this.socketUtils.hookSocket("chat");
 			} catch (error) {
